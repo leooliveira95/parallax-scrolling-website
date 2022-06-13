@@ -1,0 +1,312 @@
+/* universal styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055, #7597de);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.87);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 184, 184);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(184, 184, 184);
+    /* creates padding around scroll thumb */
+}
+
+/* header */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo {
+    color: #2b1055;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 2px 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background: rgba(255, 255, 255, 0.808);
+    color: #2b1055;
+}
+
+/* section (where is images) */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon {
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front {
+    z-index: 10;
+}
+
+#text {
+    position: absolute;
+    right: -350px;
+    margin-bottom: 50px;
+    z-index: 9;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    margin-bottom: 50px;
+    border-radius: 40px;
+    background: #2b1055;
+    color: #fff;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+/* Services Section */
+.services {
+    background: #1c0522;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10rem 0;
+}
+
+.services h1 {
+    background-color: #ff8177;
+    background-image: linear-gradient(to right, #c3120b 0%, #ffaa00 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.services__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.services__card {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #c3120b 0%, #2e2709 100%);
+    transition: 0.3s ease-in;
+}
+
+.services__card:nth-child(2) {
+    background: #1fa2ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,
+            #c3120b,
+            #a5251f,
+            #2e2709);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,
+            #1fa2ff,
+            #12d8fa,
+            #a6ffcb);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.services__card:nth-child(3) {
+    background-image: linear-gradient(-225deg,
+            #ff9500 0%,
+            #ffa200 29%,
+            #ffaa00 67%,
+            #ffdd00 100%);
+}
+
+.services__card h2 {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.services__card p {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.services__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.services__card button{
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #131313;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.services__card button:hover {
+    cursor: pointer;
+}
+
+.services__card:hover {
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+
+.services__card a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .services__wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .services__card {
+        margin: 10px;
+        height: 300px;
+        width: 212px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        background-image: linear-gradient(to right, #c3120b 0%, #2e2709 100%);
+        transition: 0.3s ease-in;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    header ul{
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        z-index: -1;
+    }
+    .services__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    #text {
+        position: absolute;
+        right: -350px;
+        margin-bottom: 50px;
+        z-index: 9;
+        color: #fff;
+        white-space: nowrap;
+        font-size: 2.5rem;
+    }
+}
+
+.hidden {
+    overflow: hidden;
+}
